@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vishal Veer — Graphic Visualiser | Digital Resume & Visual Portfolio</title>
+  <meta name="description" content="Professional digital resume and interactive visual portfolio of Vishal Veer, Lead Graphic Visualiser with 10+ years of visual design, LMS mailers, and enterprise brand experience.">
+  <meta name="author" content="Vishal Veer">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Vishal Veer — Lead Graphic Visualiser">
+  <meta property="og:description" content="10+ Years of Visual Design Experience. LMS Mailers, Corporate Communication, Brand Identity & UI/UX.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Kalam (Handwritten Display) & Poppins (Modern Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Theme & Intro State Initialization (Prevents FOUC) -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('vv_theme');
+        const theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+
+        // Check if returning visitor or already completed intro in this session
+        const introCompleted = sessionStorage.getItem('vv_intro_completed') === 'true' || localStorage.getItem('vv_intro_seen') === 'true';
+        if (introCompleted) {
+          document.documentElement.classList.add('intro-dismissed');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       0. IMMERSIVE INTERACTIVE ENTRY EXPERIENCE
+       ========================================================================= -->
+  <aside class="entry-experience" id="entry-experience" aria-label="Immersive Portfolio Introduction" role="dialog" aria-modal="true">
+    <!-- Ambient Background Treatment (Soft, subtle glows & moving signature line) -->
+    <div class="entry-ambient" aria-hidden="true">
+      <div class="ambient-glow glow-purple"></div>
+      <div class="ambient-glow glow-cyan"></div>
+      <div class="entry-signature-line"></div>
+    </div>
+
+    <!-- Top Utility Bar: Minimal Branding + Skip Intro -->
+    <div class="entry-top-bar">
+      <div class="entry-brand-micro">
+        <span class="entry-brand-dot" aria-hidden="true">●</span>
+        <span>VISHAL VEER &bull; PORTFOLIO</span>
+      </div>
+      <div class="entry-top-actions">
+        <button class="entry-skip-btn" id="entry-skip-btn" aria-label="Skip introduction and enter main portfolio">
+          <span>SKIP INTRO</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Viewport Container for Screens -->
+    <div class="entry-viewport">
+      <!-- SCREEN 01: Centered Editorial Introduction -->
+      <div class="entry-screen entry-screen-1 active" id="entry-screen-1" role="region" aria-label="Introduction Overview">
+        <div class="entry-editorial-card">
+          <div class="entry-anim-item entry-anim-1">
+            <span class="entry-eyebrow">
+              <span class="entry-eyebrow-bullet" aria-hidden="true">●</span>
+              <span>CREATIVE VISUAL RESUME</span>
+            </span>
+            <h1 class="entry-name">VISHAL VEER</h1>
+          </div>
+
+          <div class="entry-anim-item entry-anim-2">
+            <div class="entry-title-badge">LEAD GRAPHIC VISUALISER</div>
+          </div>
+
+          <!-- Staggered Statistics Row (10+ Years, 100+ Clients, 500+ Projects) -->
+          <div class="entry-stats-row">
+            <div class="entry-stat-card entry-anim-item entry-anim-3">
+              <span class="entry-stat-num">10<span class="entry-stat-plus">+</span></span>
+              <span class="entry-stat-lbl">YEARS</span>
+              <span class="entry-stat-sub">Enterprise Craft</span>
+            </div>
+            <div class="entry-stat-sep entry-anim-item entry-anim-3" aria-hidden="true">•</div>
+            <div class="entry-stat-card entry-anim-item entry-anim-4">
+              <span class="entry-stat-num">100<span class="entry-stat-plus">+</span></span>
+              <span class="entry-stat-lbl">CLIENTS</span>
+              <span class="entry-stat-sub">Global Brands</span>
+            </div>
+            <div class="entry-stat-sep entry-anim-item entry-anim-4" aria-hidden="true">•</div>
+            <div class="entry-stat-card entry-anim-item entry-anim-5">
+              <span class="entry-stat-num">500<span class="entry-stat-plus">+</span></span>
+              <span class="entry-stat-lbl">PROJECTS</span>
+              <span class="entry-stat-sub">Delivered Assets</span>
+            </div>
+          </div>
+
+          <!-- Supporting Statement -->
+          <p class="entry-statement entry-anim-item entry-anim-6">
+            "Designing visual experiences with purpose."
+          </p>
+
+          <!-- Primary CTA Button -->
+          <div class="entry-actions entry-anim-item entry-anim-7">
+            <button class="btn btn-primary entry-begin-btn" id="entry-begin-btn">
+              <span>BEGIN THE JOURNEY</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Secondary Bottom Skip Link for Mobile / Quiet Access -->
+          <div class="entry-anim-item entry-anim-7" style="margin-top: 1rem;">
+            <button class="entry-subtle-link" id="entry-bottom-skip-btn">
+              Skip straight to portfolio →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 02: "WHERE WOULD YOU LIKE TO START?" -->
+      <div class="entry-screen entry-screen-2" id="entry-screen-2" role="region" aria-label="Exploration Choice Screen">
+        <div class="entry-choice-wrap">
+          <div class="entry-choice-header">
+            <span class="entry-eyebrow">
+              <span class="entry-eyebrow-bullet" aria-hidden="true">●</span>
+              <span>CURATED EXPLORATION</span>
+            </span>
+            <h2 class="entry-choice-title">WHERE WOULD YOU LIKE TO START?</h2>
+            <p class="entry-choice-lead">Select a tailored path to explore Vishal Veer's experience, brand deliverables, or executive profile.</p>
+          </div>
+
+          <div class="entry-cards-grid">
+            <!-- Choice 01: MY JOURNEY -->
+            <div class="entry-choice-card" id="entry-choice-journey" tabindex="0" role="button" aria-label="Explore My Journey: 10+ Years of Experience">
+              <div class="choice-card-header">
+                <span class="choice-card-tag">PATH 01</span>
+                <span class="choice-rec-badge" id="choice-rec-badge">START HERE →</span>
+              </div>
+              <h3 class="choice-card-title">MY JOURNEY</h3>
+              <div class="choice-card-meta">10+ Years of Experience</div>
+              <p class="choice-card-desc">Explore chronological career milestones, enterprise learning design, leadership tenures, and agency craft.</p>
+              <div class="choice-card-cta">
+                <span class="choice-cta-text">EXPLORE</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Choice 02: MY WORK -->
+            <div class="entry-choice-card" id="entry-choice-work" tabindex="0" role="button" aria-label="Explore My Work: 500+ Creative Projects">
+              <div class="choice-card-header">
+                <span class="choice-card-tag">PATH 02</span>
+              </div>
+              <h3 class="choice-card-title">MY WORK</h3>
+              <div class="choice-card-meta">500+ Creative Projects</div>
+              <p class="choice-card-desc">Direct access to selected creative work and corporate client brand accounts including L&amp;T, Manyavar, and Tata Steel.</p>
+              <div class="choice-card-cta">
+                <span class="choice-cta-text">EXPLORE</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Choice 03: QUICK PROFILE -->
+            <div class="entry-choice-card" id="entry-choice-quick" tabindex="0" role="button" aria-label="Open Quick Profile: About, Tools, Contact">
+              <div class="choice-card-header">
+                <span class="choice-card-tag">PATH 03</span>
+              </div>
+              <h3 class="choice-card-title">QUICK PROFILE</h3>
+              <div class="choice-card-meta">About &bull; Tools &bull; Contact</div>
+              <p class="choice-card-desc">Fast executive resume snapshot for recruiters: career timeline, client accounts, tools mastery, and direct contacts.</p>
+              <div class="choice-card-cta">
+                <span class="choice-cta-text">VIEW</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Option to enter main home directly -->
+          <div class="entry-choice-footer">
+            <button class="entry-subtle-link" id="entry-choice-skip-btn">
+              Or enter main portfolio directly →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       1. HEADER & STICKY NAVIGATION
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-link" aria-label="Vishal Veer Homepage">
+        <span class="brand-name">VISHAL VEER</span>
+        <span class="brand-title">Graphic Visualiser</span>
+      </a>
+
+      <!-- Desktop Navigation (6 Items: HOME, ABOUT, EXPERIENCE, EXPERTISE, CONTACT, QUICK VIEW) -->
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#expertise" class="nav-link">Expertise</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#quickview" class="nav-link nav-link-quickview" onclick="openQuickViewModal(event)">Quick View</a>
+      </nav>
+
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <a href="mailto:dummy.email@example.com" class="btn-icon" id="header-email-btn" aria-label="Send Email to Vishal Veer" title="Email Vishal Veer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="btn-icon" id="header-linkedin-btn" aria-label="Vishal Veer LinkedIn Profile" title="Connect on LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect width="4" height="12" x="2" y="9"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+
+        <a href="tel:+919000000000" class="btn-icon" id="header-phone-btn" aria-label="Call Vishal Veer" title="Call Mobile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </a>
+
+        <!-- Minimal Theme Toggle Button (Sun / Moon) -->
+        <button class="btn-icon theme-toggle-btn" id="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode">
+          <!-- Sun icon (displayed in dark mode) -->
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/>
+            <path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/>
+            <path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (displayed in light mode) -->
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <div class="header-sep"></div>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <nav class="mobile-nav-list">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#expertise" class="mobile-nav-link">Expertise</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="#quickview" class="mobile-nav-link mobile-nav-quickview" onclick="openQuickViewModal(event)">Quick View</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: var(--border-subtle);">
+        <span style="font-size: 0.85rem; color: var(--color-text-secondary); font-weight: 500;">Interface Theme</span>
+        <button class="btn-icon theme-toggle-btn" id="mobile-theme-toggle" aria-label="Switch to light mode" title="Switch theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/>
+            <path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/>
+            <path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+      </div>
+      <p style="font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 1rem;">Direct Contact:</p>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="mailto:dummy.email@example.com" class="btn btn-outline" style="flex: 1; padding: 0.75rem 0.5rem; font-size: 0.75rem;">Email</a>
+        <a href="tel:+919000000000" class="btn btn-primary" style="flex: 1; padding: 0.75rem 0.5rem; font-size: 0.75rem;">Call</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- =======================================================================
+         2. HERO SECTION
+         ======================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-name kalam-title kalam-hero">Vishal Veer</h1>
+          <div class="hero-title-tag">GRAPHIC VISUALISER</div>
+
+          <!-- Hero Core Stats (Mobile-first priority strip: 10+ Years, 100+ Clients, 500+ Projects) -->
+          <div class="hero-core-stats" id="hero-core-stats" aria-label="Core Career Highlights">
+            <div class="hero-stat-pill">
+              <span class="hero-stat-val">10+</span>
+              <span class="hero-stat-lbl">YEARS</span>
+            </div>
+            <span class="hero-stat-dot" aria-hidden="true">•</span>
+            <div class="hero-stat-pill">
+              <span class="hero-stat-val">100+</span>
+              <span class="hero-stat-lbl">CLIENTS</span>
+            </div>
+            <span class="hero-stat-dot" aria-hidden="true">•</span>
+            <div class="hero-stat-pill">
+              <span class="hero-stat-val">500+</span>
+              <span class="hero-stat-lbl">PROJECTS</span>
+            </div>
+          </div>
+
+          <p class="hero-statement">
+            "Creating purposeful visual experiences through graphic design, brand communication and digital storytelling."
+          </p>
+
+          <div class="hero-capabilities" id="hero-capabilities">
+            <!-- Populated via data.js -->
+            <span class="cap-tag">Visual Design</span>
+            <span class="cap-tag">Digital Design</span>
+            <span class="cap-tag">LMS</span>
+            <span class="cap-tag">UI/UX</span>
+            <span class="cap-tag">Branding</span>
+            <span class="cap-tag">Corporate Communication</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#experience" class="btn btn-primary" id="hero-primary-cta">
+              <span>EXPLORE MY JOURNEY</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Photo Frame (Profile Image Widget) -->
+        <div class="hero-photo-wrapper">
+          <input type="file" id="hero-photo-input" accept="image/png, image/*" aria-label="Upload or select profile image" style="display: none;">
+          <div class="editorial-frame" id="hero-photo-frame" role="button" tabindex="0" aria-label="Profile image widget — Click to upload or select profile PNG">
+            <img src="images/profile-main.png" alt="Vishal Veer — Lead Graphic Visualiser" class="hero-profile-img" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- =======================================================================
+         3. PROFESSIONAL PROFILE SECTION
+         ======================================================================= -->
+    <section class="section profile-section" id="about">
+      <div class="container profile-editorial-wrap">
+        <!-- Editorial Header: Split Heading (Left) and Narrative (Right) -->
+        <div class="profile-editorial-header">
+          <div class="profile-header-col">
+            <div class="profile-eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true">●</span>
+              <span>PROFESSIONAL PROFILE</span>
+            </div>
+
+            <h2 class="profile-heading kalam-title kalam-purpose">Design With Purpose</h2>
+
+            <div class="profile-accent-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="profile-body-col">
+            <p class="profile-lead-p">
+              With 10+ years of experience, I create visual experiences that bring together creativity, clarity, and business purpose across enterprise learning, branding, marketing, and digital platforms.
+            </p>
+            <p>
+              From a single visual to a complete design system, my focus is simple &mdash; make communication clearer, experiences stronger, and ideas more memorable.
+            </p>
+          </div>
+        </div>
+
+        <hr class="profile-divider">
+
+        <!-- Statistics Cards (3 equal columns spanning full container width) -->
+        <div class="profile-stats-grid" id="stats-grid">
+          <div class="profile-stat-card">
+            <div class="profile-stat-number">10<span class="stat-plus">+</span></div>
+            <div class="profile-stat-label">YEARS EXPERIENCE</div>
+            <div class="profile-stat-desc">Leading creative visual design and corporate communication across enterprise environments</div>
+          </div>
+
+          <div class="profile-stat-card">
+            <div class="profile-stat-number">100<span class="stat-plus">+</span></div>
+            <div class="profile-stat-label">CLIENTS DELIVERED</div>
+            <div class="profile-stat-desc">Global conglomerates, industry-leading brands, and collaborative agency accounts</div>
+          </div>
+
+          <div class="profile-stat-card">
+            <div class="profile-stat-number">500<span class="stat-plus">+</span></div>
+            <div class="profile-stat-label">CREATIVE PROJECTS</div>
+            <div class="profile-stat-desc">Enterprise LMS mailers, digital marketing assets, brand identities, and design collaterals</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- =======================================================================
+         4. CREATIVE JOURNEY (VERTICAL CAREER TIMELINE & DRILL-DOWN)
+         ======================================================================= -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <!-- Section Editorial Header: Split Identity (Left) vs Context (Right) -->
+        <div class="section-editorial-header">
+          <div class="section-header-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true">●</span>
+              <span>CAREER MILESTONES &amp; LEADERSHIP</span>
+            </div>
+            <h2 class="section-heading kalam-title kalam-journey">Creative Journey</h2>
+            <div class="section-accent-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="section-body-col">
+            <p class="section-desc-p">
+              A visual journey through graphic design, visual communication, digital experiences and creative problem-solving across 10+ years.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Vertical Timeline Container rendered by app.js (Compact 110-140px layout) -->
+        <div class="career-timeline" id="companies-container" role="list">
+          <!-- Rendered dynamically from PORTFOLIO_DATA.companies -->
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- =======================================================================
+         6. TECHNICAL & CREATIVE TOOLS
+         ======================================================================= -->
+    <section class="section expertise-section" id="expertise">
+      <div class="container">
+        <!-- Section Editorial Header: Split Identity (Left) vs Context (Right) -->
+        <div class="section-editorial-header">
+          <div class="section-header-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true">●</span>
+              <span>CORE COMPETENCIES &amp; STACK</span>
+            </div>
+            <h2 class="section-heading kalam-title kalam-tools">Technical &amp; Creative Tools</h2>
+            <div class="section-accent-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="section-body-col">
+            <p class="section-desc-p">
+              Core design software and visual platforms driving enterprise creative execution across 10+ years.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tools & Software Proficiency Grid -->
+        <div class="tools-container">
+          <div class="tools-proficiency-grid" id="tools-container">
+            <!-- Rendered dynamically from PORTFOLIO_DATA.tools -->
+          </div>
+          <p class="tools-assessment-note">Proficiency levels represent self-assessed working expertise based on professional project experience.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- =======================================================================
+         7. CONTACT SECTION
+         ======================================================================= -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <!-- Section Editorial Header: Split Identity (Left) vs Context (Right) -->
+        <div class="section-editorial-header">
+          <div class="section-header-col">
+            <div class="section-eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true">●</span>
+              <span>GET IN TOUCH</span>
+            </div>
+            <h2 class="section-heading kalam-title kalam-connect">Let's Connect</h2>
+            <div class="section-accent-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="section-body-col">
+            <p class="section-desc-p">
+              Have a project, opportunity, or creative challenge in mind? Let's connect and create something meaningful.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3-Card Interactive Contact Suite -->
+        <div class="contact-cards-grid">
+          <!-- Card 01: Email Directly -->
+          <div class="contact-channel-card" id="card-email">
+            <div class="contact-channel-top">
+              <a href="mailto:dummy.email@example.com" class="contact-detail-icon icon-email" aria-label="Send Email" id="contact-email-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </a>
+            </div>
+            <div class="contact-channel-info">
+              <div class="contact-detail-label">EMAIL ADDRESS</div>
+              <a href="mailto:dummy.email@example.com" class="contact-detail-value" id="contact-email-link">vveer20@gmail.com</a>
+              <p class="contact-channel-sub">Direct correspondence for visual leadership roles and enterprise inquiries.</p>
+            </div>
+            <a href="mailto:dummy.email@example.com" class="btn btn-primary contact-card-btn" id="btn-email-me">
+              <span>Email Me</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 02: LinkedIn Network -->
+          <div class="contact-channel-card" id="card-linkedin">
+            <div class="contact-channel-top">
+              <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="contact-detail-icon icon-linkedin" aria-label="LinkedIn Profile" id="contact-linkedin-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z"/>
+                </svg>
+              </a>
+            </div>
+            <div class="contact-channel-info">
+              <div class="contact-detail-label">LINKEDIN</div>
+              <a href="https://https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHwBfhjn719VQAAAaBsJoGQyO8r3v2SM6ixXw-rdtFixIkvKQfD0YIl8UAbWv2mH4FAXCWZjsGZDBTMzAghp43anlpUC1LyewHKU-M0KDq_KMzMtslxf2cpuMSQXbB6BxUgGIQ=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fvishal-veer-2211a5114%3Futm_source%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dmember_android" target="_blank" rel="noopener noreferrer" class="contact-detail-value" id="contact-linkedin-link">LinkedIn Profile</a>
+              <p class="contact-channel-sub">Professional networking, career opportunities and collaborations.</p>
+            </div>
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="btn btn-primary contact-card-btn" id="btn-linkedin-me">
+              <span>Connect on LinkedIn</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Card 03: Direct Call & WhatsApp -->
+          <div class="contact-channel-card" id="card-phone">
+            <div class="contact-channel-top">
+              <div class="contact-icon-group">
+                <a href="tel:+919594391427" class="contact-detail-icon icon-phone" aria-label="Call +91 95943 91427" id="contact-phone-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </a>
+                <a href="https://wa.me/919594391427" target="_blank" rel="noopener noreferrer" class="contact-detail-icon icon-whatsapp" aria-label="Chat on WhatsApp" id="contact-whatsapp-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="contact-channel-info">
+              <div class="contact-detail-label">PHONE / MOBILE</div>
+              <a href="tel:+919594391427" class="contact-detail-value" id="contact-phone-link">+91 95943 91427</a>
+              <p class="contact-channel-sub">Quick direct discussion regarding professional opportunities and collaboration.</p>
+            </div>
+            <a href="tel:+919594391427" class="btn btn-primary contact-card-btn" id="btn-call-me">
+              <span>Call Me</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       8. EDITORIAL FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        &copy; <span id="current-year">2025</span> <strong>Vishal Veer</strong> — Lead Graphic Visualiser. All rights reserved.
+      </div>
+      <div class="footer-actions-group">
+        <button type="button" class="footer-replay-btn" id="btn-replay-journey" aria-label="Replay interactive entry introduction">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          <span>Replay Journey</span>
+        </button>
+        <a href="#hero" class="footer-back-top" aria-label="Scroll back to top">
+          Back to top
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       9. INTERACTIVE COMPANY / CLIENT DRILL-DOWN MODAL
+       ========================================================================= -->
+  <div class="drilldown-modal" id="drilldown-modal" role="dialog" aria-modal="true" aria-labelledby="modal-company-title">
+    <div class="modal-viewport">
+      <div class="modal-dialog">
+        <!-- Modal Top Bar -->
+        <div class="modal-header">
+          <div class="modal-breadcrumb" id="modal-breadcrumb">
+            <!-- Dynamically updated: Experience > Company > Client -->
+          </div>
+
+          <div class="modal-actions">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal dialog">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Content Body -->
+        <div class="modal-body" id="modal-body-content">
+          <!-- Populated dynamically: Company View or Client Work View -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       10. FULL-SCREEN LIGHTBOX MODAL
+       ========================================================================= -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Full-screen artwork preview">
+    <div class="lightbox-header">
+      <div class="lightbox-info">
+        <h3 class="lightbox-title" id="lightbox-title">Artwork Title</h3>
+        <span class="lightbox-subtitle" id="lightbox-subtitle">Category — Client</span>
+      </div>
+      <div class="lightbox-controls">
+        <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
+        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox (Esc)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="lightbox-content-area" id="lightbox-content-area">
+      <!-- Navigation Prev -->
+      <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev-btn" aria-label="Previous artwork (Left arrow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- Center Image Viewport -->
+      <div class="lightbox-image-container" id="lightbox-image-container">
+        <!-- Will display either actual high-res <img> or clean editorial placeholder -->
+      </div>
+
+      <!-- Navigation Next -->
+      <button class="lightbox-nav-btn lightbox-next" id="lightbox-next-btn" aria-label="Next artwork (Right arrow)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="lightbox-footer">
+      <span>Use Keyboard Arrow Keys &larr; &rarr; to navigate, Esc to close &bull; Swipe on mobile</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       11. QUICK VIEW RECRUITER MODAL (STANDALONE RESUME SNAPSHOT)
+       ========================================================================= -->
+  <div class="quickview-modal" id="quickview-modal" role="dialog" aria-modal="true" aria-labelledby="qv-title" aria-hidden="true">
+    <div class="quickview-viewport">
+      <div class="quickview-dialog">
+        <!-- Quick View Header -->
+        <div class="quickview-header">
+          <div class="quickview-tag">
+            <span class="eyebrow-dot" aria-hidden="true">●</span>
+            <span>RECRUITER FAST-TRACK PROFILE</span>
+          </div>
+          <button class="modal-close-btn" id="quickview-close-btn" aria-label="Close Quick View dialog">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Quick View Body -->
+        <div class="quickview-body">
+          <!-- Profile Header Block -->
+          <div class="qv-profile-block">
+            <h2 class="qv-name" id="qv-title">VISHAL VEER</h2>
+            <div class="qv-title-tag">GRAPHIC VISUALISER</div>
+            <p class="qv-summary">
+              Accomplished visual design lead with <strong>10+ years of expertise</strong> directing enterprise learning design (LMS), corporate identity, visual communication, and creative marketing campaigns for top global and Indian conglomerates.
+            </p>
+
+            <!-- 3 Core Stats -->
+            <div class="qv-stats-row">
+              <div class="qv-stat-card">
+                <span class="qv-stat-num">10+</span>
+                <span class="qv-stat-label">YEARS EXPERIENCE</span>
+              </div>
+              <div class="qv-stat-card">
+                <span class="qv-stat-num">100+</span>
+                <span class="qv-stat-label">CLIENTS DELIVERED</span>
+              </div>
+              <div class="qv-stat-card">
+                <span class="qv-stat-num">500+</span>
+                <span class="qv-stat-label">CREATIVE PROJECTS</span>
+              </div>
+            </div>
+
+            <!-- Quick Action CTA Buttons -->
+            <div class="qv-actions-row">
+              <a href="mailto:dummy.email@example.com" class="btn btn-primary qv-action-btn" id="qv-email-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>Email Candidate</span>
+              </a>
+              <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="btn btn-gold qv-action-btn" id="qv-linkedin-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                <span>LinkedIn Profile</span>
+              </a>
+              <a href="tel:+919000000000" class="btn btn-outline qv-action-btn" id="qv-phone-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Direct Call</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Section: Career Timeline -->
+          <div class="qv-section">
+            <h3 class="qv-section-title">CAREER TIMELINE &amp; EXPERIENCE</h3>
+            <div class="qv-timeline-stack">
+              <div class="qv-timeline-entry">
+                <div class="qv-entry-badge current">PRESENT</div>
+                <div class="qv-entry-details">
+                  <div class="qv-entry-header">
+                    <span class="qv-company-name">EduRiser</span>
+                    <span class="qv-company-duration">Feb 2025 — Present</span>
+                  </div>
+                  <div class="qv-entry-role">Lead Graphic Visualiser</div>
+                  <p class="qv-entry-desc">Leading learning design visual collateral, high-stakes corporate mailers, LMS assets, and UI design.</p>
+                </div>
+              </div>
+
+              <div class="qv-timeline-entry">
+                <div class="qv-entry-badge">2022–24</div>
+                <div class="qv-entry-details">
+                  <div class="qv-entry-header">
+                    <span class="qv-company-name">Karma Management Global Solutions</span>
+                    <span class="qv-company-duration">Jun 2022 — Jan 2024</span>
+                  </div>
+                  <div class="qv-entry-role">Graphic Designer</div>
+                  <p class="qv-entry-desc">Global HR compliance collaterals, enterprise advisory decks, corporate branding, and digital campaigns.</p>
+                </div>
+              </div>
+
+              <div class="qv-timeline-entry">
+                <div class="qv-entry-badge">2019–21</div>
+                <div class="qv-entry-details">
+                  <div class="qv-entry-header">
+                    <span class="qv-company-name">DigiMarketerZ</span>
+                    <span class="qv-company-duration">Sep 2019 — May 2021</span>
+                  </div>
+                  <div class="qv-entry-role">Graphic Designer</div>
+                  <p class="qv-entry-desc">Performance marketing visual creative sets, social ad assets, and brand campaign collateral.</p>
+                </div>
+              </div>
+
+              <div class="qv-timeline-entry">
+                <div class="qv-entry-badge">2016–19</div>
+                <div class="qv-entry-details">
+                  <div class="qv-entry-header">
+                    <span class="qv-company-name">Veer Graphics</span>
+                    <span class="qv-company-duration">Nov 2016 — Aug 2019</span>
+                  </div>
+                  <div class="qv-entry-role">Graphic Designer / Self-employed</div>
+                  <p class="qv-entry-desc">End-to-end visual identity packages, commercial print production, and brand guidelines for corporate clients.</p>
+                </div>
+              </div>
+
+              <div class="qv-timeline-entry">
+                <div class="qv-entry-badge">2015–16</div>
+                <div class="qv-entry-details">
+                  <div class="qv-entry-header">
+                    <span class="qv-company-name">SNP Softwares</span>
+                    <span class="qv-company-duration">Sep 2015 — Oct 2016</span>
+                  </div>
+                  <div class="qv-entry-role">Graphic Designer</div>
+                  <p class="qv-entry-desc">Software interface concepts, web asset production, and digital promotional collateral.</p>
+                </div>
+              </div>
+
+              <div class="qv-timeline-entry">
+                <div class="qv-entry-badge">2015</div>
+                <div class="qv-entry-details">
+                  <div class="qv-entry-header">
+                    <span class="qv-company-name">JKH Exports</span>
+                    <span class="qv-company-duration">Feb 2015 — Aug 2015</span>
+                  </div>
+                  <div class="qv-entry-role">Graphic Designer</div>
+                  <p class="qv-entry-desc">Export product catalogues, packaging aesthetics, and corporate brand presentations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Enterprise Client Accounts -->
+          <div class="qv-section">
+            <h3 class="qv-section-title">SELECTED ENTERPRISE CLIENT ACCOUNTS</h3>
+            <p class="qv-subtext">Delivered creative visual solutions for these leading accounts during agency &amp; corporate engagements:</p>
+            <div class="qv-chips-wrap">
+              <span class="qv-chip">Larsen &amp; Toubro (L&amp;T)</span>
+              <span class="qv-chip">Manyavar / Vedant Fashion</span>
+              <span class="qv-chip">Tata Steel</span>
+              <span class="qv-chip">TVS</span>
+              <span class="qv-chip">Taj Hotels &amp; TajSATS</span>
+              <span class="qv-chip">Gulf Oil</span>
+              <span class="qv-chip">BCCL - Times Group</span>
+              <span class="qv-chip">Coromandel International</span>
+              <span class="qv-chip">Emerson</span>
+              <span class="qv-chip">L&amp;T Realty</span>
+              <span class="qv-chip">L&amp;T Construction</span>
+            </div>
+          </div>
+
+          <!-- Section: Technical Tools -->
+          <div class="qv-section">
+            <h3 class="qv-section-title">CORE TECHNICAL &amp; CREATIVE TOOLS</h3>
+            <div class="qv-tools-grid">
+              <div class="qv-tool-item">
+                <strong>Adobe Photoshop</strong>
+                <span>Lead Visual Craft</span>
+              </div>
+              <div class="qv-tool-item">
+                <strong>Adobe Illustrator</strong>
+                <span>Core Vector Systems</span>
+              </div>
+              <div class="qv-tool-item">
+                <strong>Adobe Premiere Pro</strong>
+                <span>Video &amp; Motion</span>
+              </div>
+              <div class="qv-tool-item">
+                <strong>Canva</strong>
+                <span>Rapid Digital Assets</span>
+              </div>
+              <div class="qv-tool-item">
+                <strong>PowerPoint</strong>
+                <span>Executive Decks</span>
+              </div>
+              <div class="qv-tool-item">
+                <strong>Figma</strong>
+                <span>UI/UX Prototyping</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer CTA -->
+          <div class="qv-footer-block">
+            <p>Looking for a Lead Graphic Visualiser to elevate your brand's creative output?</p>
+            <div class="qv-footer-actions">
+              <a href="mailto:dummy.email@example.com" class="btn btn-primary" id="qv-footer-email">Get In Touch Directly</a>
+              <button type="button" class="btn btn-outline" id="qv-explore-btn">Explore Full Portfolio</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Central Data & Interactive Logic Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
