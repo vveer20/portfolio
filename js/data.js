@@ -72,13 +72,13 @@ const PORTFOLIO_DATA = {
         description: "Leading creative visual design and corporate communication"
       },
       {
-        value: "100+",
-        label: "CLIENTS",
+        value: "75+",
+        label: "CLIENTS DELIVERED",
         description: "Enterprises, brands, and collaborative partners"
       },
       {
-        value: "500+",
-        label: "PROJECTS",
+        value: "250+",
+        label: "CREATIVE PROJECTS",
         description: "LMS mailers, digital products, and brand collaterals"
       }
     ]
@@ -158,7 +158,7 @@ const PORTFOLIO_DATA = {
           ],
           description: "Corporate visual assets, employee learning collateral, and creative mailers executed for Tata Steel.",
           images: [
-            { id: "tata-01", title: "Tata Steel Design 01", category: "Creative Design", src: "images/tata-steel-work-01.jpg", placeholder: "TATA STEEL DESIGN 01" },
+            { id: "tata-01", title: "Tata Steel Design 01", category: "Creative Design", src: "images/tata-steel-work-01.gif", placeholder: "TATA STEEL DESIGN 01" },
             { id: "tata-02", title: "Tata Steel Design 02", category: "LMS Mailer", src: "images/tata-steel-work-02.jpg", placeholder: "TATA STEEL DESIGN 02" },
             { id: "tata-03", title: "Tata Steel Design 03", category: "Corporate Collateral", src: "images/tata-steel-work-03.jpg", placeholder: "TATA STEEL DESIGN 03" }
           ]
@@ -260,123 +260,31 @@ const PORTFOLIO_DATA = {
       logo: "images/company-karma-global.jpg",
       logoPlaceholder: "KARMA GLOBAL",
       summary: "Spearheaded brand creative collaterals, digital campaign assets, executive communication, and visual materials.",
-      type: "with_brands",
+      type: "direct_work",
+      workLabel: "SELECTED CREATIVE WORK",
       hasWork: true,
       buttonText: "VIEW WORK",
-      clientsLabel: "BRAND & CLIENT ACCOUNTS",
-      brands: [
-        {
-          id: "karma-brand-01",
-          name: "Brand 01",
-          fullName: "Brand 01",
-          clientBadge: "Brand Account — Karma Management",
-          relationshipNote: "Brand account delivered during my tenure at Karma Management; not a direct employer.",
-          logo: "images/karma-client-01.jpg",
-          logoPlaceholder: "BRAND 01",
-          contribution: [
-            "Visual Identity",
-            "Campaign Visuals",
-            "Executive Creative"
-          ],
-          description: "Visual identity collaterals, milestone anniversary campaigns, and executive leadership creative assets.",
-          images: [
-            {
-              id: "karma-01",
-              title: "18th Anniversary Milestone Campaign",
-              category: "Campaign Visual",
-              src: "images/karma-work-01.jpg",
-              placeholder: "KARMA 18TH ANNIVERSARY"
-            },
-            {
-              id: "karma-02",
-              title: "Executive Leadership Creative",
-              category: "Visual Identity",
-              src: "images/karma-work-02.jpg",
-              placeholder: "KARMA LEADERSHIP VISUAL"
-            }
-          ]
-        },
-        {
-          id: "karma-brand-02",
-          name: "Brand 02",
-          fullName: "Brand 02",
-          clientBadge: "Brand Account — Karma Management",
-          relationshipNote: "Brand account delivered during my tenure at Karma Management; not a direct employer.",
-          logo: "images/karma-client-02.jpg",
-          logoPlaceholder: "BRAND 02",
-          contribution: [
-            "Corporate Event Collateral",
-            "Campaign Assets",
-            "Print Materials"
-          ],
-          description: "Corporate event conclave posters, wage code regulatory campaign graphics, and print collateral.",
-          images: [
-            {
-              id: "karma-03",
-              title: "Wage Code HR Conclave Poster",
-              category: "Corporate Event Collateral",
-              src: "images/karma-work-03.jpg",
-              placeholder: "KARMA WAGE CODE CONCLAVE"
-            }
-          ]
-        }
+      contribution: [
+        "Brand Identity",
+        "Campaign Visuals",
+        "Corporate Collateral",
+        "Executive Creative"
       ],
-      clients: [
-        {
-          id: "karma-brand-01",
-          name: "Brand 01",
-          fullName: "Brand 01",
-          clientBadge: "Brand Account — Karma Management",
-          relationshipNote: "Brand account delivered during my tenure at Karma Management; not a direct employer.",
-          logo: "images/karma-client-01.jpg",
-          logoPlaceholder: "BRAND 01",
-          contribution: [
-            "Visual Identity",
-            "Campaign Visuals",
-            "Executive Creative"
-          ],
-          description: "Visual identity collaterals, milestone anniversary campaigns, and executive leadership creative assets.",
-          images: [
-            {
-              id: "karma-01",
-              title: "18th Anniversary Milestone Campaign",
-              category: "Campaign Visual",
-              src: "images/karma-work-01.jpg",
-              placeholder: "KARMA 18TH ANNIVERSARY"
-            },
-            {
-              id: "karma-02",
-              title: "Executive Leadership Creative",
-              category: "Visual Identity",
-              src: "images/karma-work-02.jpg",
-              placeholder: "KARMA LEADERSHIP VISUAL"
-            }
-          ]
-        },
-        {
-          id: "karma-brand-02",
-          name: "Brand 02",
-          fullName: "Brand 02",
-          clientBadge: "Brand Account — Karma Management",
-          relationshipNote: "Brand account delivered during my tenure at Karma Management; not a direct employer.",
-          logo: "images/karma-client-02.jpg",
-          logoPlaceholder: "BRAND 02",
-          contribution: [
-            "Corporate Event Collateral",
-            "Campaign Assets",
-            "Print Materials"
-          ],
-          description: "Corporate event conclave posters, wage code regulatory campaign graphics, and print collateral.",
-          images: [
-            {
-              id: "karma-03",
-              title: "Wage Code HR Conclave Poster",
-              category: "Corporate Event Collateral",
-              src: "images/karma-work-03.jpg",
-              placeholder: "KARMA WAGE CODE CONCLAVE"
-            }
-          ]
-        }
+      images: [
+        { id: "karma-01", title: "Karma Creative 01", category: "Campaign Visual", src: "images/karma-work-01.jpg", placeholder: "KARMA CREATIVE 01" },
+        { id: "karma-02", title: "Karma Creative 02", category: "Visual Identity", src: "images/karma-work-02.jpg", placeholder: "KARMA CREATIVE 02" },
+        { id: "karma-03", title: "Karma Creative 03", category: "Corporate Collateral", src: "images/karma-work-03.jpg", placeholder: "KARMA CREATIVE 03" },
+        { id: "karma-04", title: "Karma Creative 04", category: "Digital Asset", src: "images/karma-work-04.jpg", placeholder: "KARMA CREATIVE 04" },
+        { id: "karma-05", title: "Karma Creative 05", category: "Campaign Visual", src: "images/karma-work-05.jpg", placeholder: "KARMA CREATIVE 05" },
+        { id: "karma-06", title: "Karma Creative 06", category: "Brand Asset", src: "images/karma-work-06.jpg", placeholder: "KARMA CREATIVE 06" },
+        { id: "karma-07", title: "Karma Creative 07", category: "Marketing Collateral", src: "images/karma-work-07.jpg", placeholder: "KARMA CREATIVE 07" },
+        { id: "karma-08", title: "Karma Creative 08", category: "Corporate Design", src: "images/karma-work-08.jpg", placeholder: "KARMA CREATIVE 08" },
+        { id: "karma-09", title: "Karma Creative 09", category: "Social Creative", src: "images/karma-work-09.jpg", placeholder: "KARMA CREATIVE 09" },
+        { id: "karma-10", title: "Karma Creative 10", category: "Event Graphics", src: "images/karma-work-10.jpg", placeholder: "KARMA CREATIVE 10" },
+        { id: "karma-11", title: "Karma Creative 11", category: "Brand Communication", src: "images/karma-work-11.jpg", placeholder: "KARMA CREATIVE 11" },
+        { id: "karma-12", title: "Karma Creative 12", category: "Executive Visual", src: "images/karma-work-12.jpg", placeholder: "KARMA CREATIVE 12" },
+        { id: "karma-13", title: "Karma Creative 13", category: "Digital Marketing", src: "images/karma-work-13.jpg", placeholder: "KARMA CREATIVE 13" },
+        { id: "karma-14", title: "Karma Creative 14", category: "Campaign Collateral", src: "images/karma-work-14.jpg", placeholder: "KARMA CREATIVE 14" }
       ]
     },
 
@@ -524,36 +432,42 @@ const PORTFOLIO_DATA = {
     {
       id: "photoshop",
       name: "Adobe Photoshop",
+      icon: "images/Adobe Photoshop.svg",
       percentage: 95,
       disciplines: "Visual Design · Image Editing · Creative Production"
     },
     {
       id: "illustrator",
       name: "Adobe Illustrator",
+      icon: "images/Adobe Illustrator.svg",
       percentage: 90,
       disciplines: "Vector Design · Branding · Visual Communication"
     },
     {
       id: "canva",
       name: "Canva",
+      icon: "images/canva.svg",
       percentage: 100,
       disciplines: "Digital Content · Quick Creative Production"
     },
     {
       id: "premiere",
       name: "Premiere Pro",
+      icon: "images/Premiere Pro.svg",
       percentage: 75,
       disciplines: "Video Editing · Motion Content"
     },
     {
       id: "powerpoint",
       name: "PowerPoint",
+      icon: "images/powerpoint.svg",
       percentage: 100,
       disciplines: "Presentation Design · Visual Storytelling"
     },
     {
       id: "figma",
       name: "Figma",
+      icon: "images/Figma.svg",
       percentage: 60,
       disciplines: "UI Design · Digital Experiences · Prototyping"
     }

@@ -569,12 +569,17 @@
       card.className = 'tool-proficiency-card';
       card.setAttribute('data-tool-id', tool.id);
 
-      const iconSvg = getToolIconSvg(tool.id);
+      let iconMarkup = '';
+      if (tool.icon) {
+        iconMarkup = `<img src="${encodeURI(tool.icon)}" alt="${tool.name} Logo" class="tool-icon-img" width="44" height="44" loading="lazy">`;
+      } else {
+        iconMarkup = getToolIconSvg(tool.id);
+      }
 
       card.innerHTML = `
         <div class="tool-card-main">
           <div class="tool-icon-frame" aria-hidden="true">
-            ${iconSvg}
+            ${iconMarkup}
           </div>
           <div class="tool-content">
             <div class="tool-header-row">

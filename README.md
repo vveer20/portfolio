@@ -27,7 +27,7 @@ A bespoke, responsive, editorial digital resume and interactive visual portfolio
    - Fluid responsive scale using CSS `clamp()`.
 
 4. **Statistics System**:
-   - Strictly standardized metrics: **10+ Years Experience**, **100+ Clients**, **500+ Projects**.
+   - Strictly standardized metrics: **10+ Years Experience**, **75+ Clients Delivered**, **250+ Creative Projects**.
    - Zero references to "20+ years" or "two decades" anywhere in copy or metadata.
 
 5. **Ultra-Compact Experience Timeline (`CREATIVE JOURNEY`)**:
