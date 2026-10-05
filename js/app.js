@@ -693,7 +693,8 @@
       document.getElementById('header-linkedin-btn'),
       document.getElementById('contact-linkedin-icon'),
       document.getElementById('contact-linkedin-link'),
-      document.getElementById('btn-linkedin-me')
+      document.getElementById('btn-linkedin-me'),
+      document.getElementById('qv-linkedin-link')
     ];
     linkedinLinks.forEach((link) => {
       if (link) {

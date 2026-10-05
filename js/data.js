@@ -25,7 +25,7 @@ const PORTFOLIO_DATA = {
     ],
     contact: {
       email: "dummy.email@example.com",
-      linkedin: "https://www.linkedin.com/in/your-profile",
+      linkedin: "https://www.linkedin.com/in/vishal-veer-2211a5114",
       phone: "+91 90000 00000",
       location: "India"
     },
@@ -311,9 +311,10 @@ const PORTFOLIO_DATA = {
         "Brand Collateral"
       ],
       images: [
-        { id: "dm-01", title: "DigiMarketerZ Design 01", category: "Digital Campaign", src: "images/digimarketerz-work-01.jpg", placeholder: "DIGIMARKETERZ DESIGN 01" },
+        { id: "dm-01", title: "DigiMarketerZ Design 01", category: "Digital Campaign", src: "images/digimarketerz-work-01.gif", placeholder: "DIGIMARKETERZ DESIGN 01" },
         { id: "dm-02", title: "DigiMarketerZ Design 02", category: "Social Creative", src: "images/digimarketerz-work-02.jpg", placeholder: "DIGIMARKETERZ DESIGN 02" },
-        { id: "dm-03", title: "DigiMarketerZ Design 03", category: "Web Banner", src: "images/digimarketerz-work-03.jpg", placeholder: "DIGIMARKETERZ DESIGN 03" }
+        { id: "dm-03", title: "DigiMarketerZ Design 03", category: "Web Banner", src: "images/digimarketerz-work-03.jpg", placeholder: "DIGIMARKETERZ DESIGN 03" },
+        { id: "dm-04", title: "DigiMarketerZ Design 04", category: "Brand Collateral", src: "images/digimarketerz-work-04.jpg", placeholder: "DIGIMARKETERZ DESIGN 04" }
       ]
     },
 
