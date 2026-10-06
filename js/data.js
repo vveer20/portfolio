@@ -24,9 +24,9 @@ const PORTFOLIO_DATA = {
       "Corporate Communication"
     ],
     contact: {
-      email: "dummy.email@example.com",
+      email: "vveer20@gmail.com",
       linkedin: "https://www.linkedin.com/in/vishal-veer-2211a5114",
-      phone: "+91 90000 00000",
+      phone: "+91 9594391427",
       location: "India"
     },
     // Personal photography slots
@@ -92,7 +92,7 @@ const PORTFOLIO_DATA = {
       fullName: "EduRiser Learning Solutions Pvt. Ltd.",
       shortName: "EduRiser",
       role: "Lead Graphic Visualiser",
-      duration: "Feb 2025 – Present",
+      duration: "Dec 2023 – Present",
       location: "Mumbai, India",
       isCurrent: true,
       logo: "images/company-eduriser.jpg",

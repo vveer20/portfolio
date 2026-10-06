@@ -681,9 +681,12 @@
 
     const emailLinks = [
       document.getElementById('header-email-btn'),
+      document.getElementById('mobile-drawer-email-btn'),
       document.getElementById('contact-email-icon'),
       document.getElementById('contact-email-link'),
-      document.getElementById('btn-email-me')
+      document.getElementById('btn-email-me'),
+      document.getElementById('qv-email-link'),
+      document.getElementById('qv-footer-email')
     ];
     emailLinks.forEach((link) => {
       if (link) {
@@ -691,8 +694,14 @@
       }
     });
 
+    const emailDisplay = document.getElementById('contact-email-link');
+    if (emailDisplay) {
+      emailDisplay.textContent = contact.email;
+    }
+
     const linkedinLinks = [
       document.getElementById('header-linkedin-btn'),
+      document.getElementById('mobile-drawer-linkedin-btn'),
       document.getElementById('contact-linkedin-icon'),
       document.getElementById('contact-linkedin-link'),
       document.getElementById('btn-linkedin-me'),
@@ -719,15 +728,22 @@
     const phoneClean = contact.phone.replace(/[^+\d]/g, '');
     const phoneLinks = [
       document.getElementById('header-phone-btn'),
+      document.getElementById('mobile-drawer-phone-btn'),
       document.getElementById('contact-phone-icon'),
       document.getElementById('contact-phone-link'),
-      document.getElementById('btn-call-me')
+      document.getElementById('btn-call-me'),
+      document.getElementById('qv-phone-link')
     ];
     phoneLinks.forEach((link) => {
       if (link) {
         link.href = `tel:${phoneClean}`;
       }
     });
+
+    const phoneDisplay = document.getElementById('contact-phone-link');
+    if (phoneDisplay) {
+      phoneDisplay.textContent = contact.phone;
+    }
 
     const waLink = document.getElementById('contact-whatsapp-icon');
     if (waLink) {
