@@ -17,6 +17,8 @@
     visitedSections: new Set(['profile'])
   };
 
+  let portfolioHistoryDepth = 0;
+
   // DOM Elements
   const elements = {
     header: document.getElementById('site-header'),
@@ -807,9 +809,20 @@
      3. INTERACTIVE DRILL-DOWN MODAL LOGIC (COMPANY -> CLIENT -> WORK)
      ========================================================================== */
   function setupModals() {
+    // Browser History popstate listener
+    window.addEventListener('popstate', (e) => {
+      handlePopState(e.state);
+    });
+
+    // Handle initial state if page is refreshed inside a modal
+    if (window.history.state && window.history.state.vvPortfolio) {
+      dismissEntryExperience();
+      handlePopState(window.history.state);
+    }
+
     // Close Drilldown Modal
     if (elements.modalCloseBtn) {
-      elements.modalCloseBtn.addEventListener('click', closeDrilldownModal);
+      elements.modalCloseBtn.addEventListener('click', () => closeDrilldownModal());
     }
 
     if (elements.drilldownModal) {
@@ -890,7 +903,7 @@
   };
 
   // Open Company Modal
-  function openCompanyModal(companyId) {
+  function openCompanyModal(companyId, options = {}) {
     const company = PORTFOLIO_DATA.companies.find((c) => c.id === companyId);
     if (!company) return;
 
@@ -904,7 +917,20 @@
       }
     }
 
-    renderCompanyOverview(company);
+    if (!options.fromHistory) {
+      history.pushState(
+        {
+          vvPortfolio: {
+            level: 'company',
+            companyId: company.id
+          }
+        },
+        ''
+      );
+      portfolioHistoryDepth = 1;
+    }
+
+    renderCompanyOverview(company, { fromHistory: true });
     elements.drilldownModal.classList.add('active');
     document.body.classList.add('modal-open');
     elements.drilldownModal.setAttribute('aria-hidden', 'false');
@@ -916,12 +942,97 @@
   }
 
   // Close Company Modal
-  function closeDrilldownModal() {
+  function closeDrilldownModal(options = {}) {
     elements.drilldownModal.classList.remove('active');
     document.body.classList.remove('modal-open');
     elements.drilldownModal.setAttribute('aria-hidden', 'true');
     state.currentCompany = null;
     state.currentClient = null;
+
+    if (!options.fromHistory) {
+      if (portfolioHistoryDepth > 0) {
+        const depthToUnwind = portfolioHistoryDepth;
+        portfolioHistoryDepth = 0;
+        try {
+          if (depthToUnwind === 1) {
+            window.history.back();
+          } else if (depthToUnwind >= 2) {
+            window.history.go(-depthToUnwind);
+          }
+        } catch (e) {
+          window.history.replaceState(null, '');
+        }
+      }
+    }
+  }
+
+  // Navigate back to Company / Client Accounts view
+  function navigateBackToCompany() {
+    if (portfolioHistoryDepth >= 2 || (window.history.state && window.history.state.vvPortfolio && window.history.state.vvPortfolio.level === 'client')) {
+      window.history.back();
+    } else if (state.currentCompany) {
+      renderCompanyOverview(state.currentCompany, { fromHistory: true });
+    }
+  }
+
+  // Browser History popstate dispatcher
+  function handlePopState(stateObj) {
+    if (elements.lightboxModal && elements.lightboxModal.classList.contains('active')) {
+      closeLightbox();
+    }
+
+    const vv = stateObj && stateObj.vvPortfolio;
+
+    if (!vv) {
+      portfolioHistoryDepth = 0;
+      if (elements.drilldownModal && elements.drilldownModal.classList.contains('active')) {
+        closeDrilldownModal({ fromHistory: true });
+      }
+      return;
+    }
+
+    if (vv.level === 'company') {
+      portfolioHistoryDepth = 1;
+      const company = PORTFOLIO_DATA.companies.find((c) => c.id === vv.companyId);
+      if (!company) {
+        closeDrilldownModal({ fromHistory: true });
+        return;
+      }
+
+      state.currentCompany = company;
+      state.currentClient = null;
+
+      if (!elements.drilldownModal.classList.contains('active')) {
+        elements.drilldownModal.classList.add('active');
+        document.body.classList.add('modal-open');
+        elements.drilldownModal.setAttribute('aria-hidden', 'false');
+      }
+
+      renderCompanyOverview(company, { fromHistory: true });
+    } else if (vv.level === 'client') {
+      portfolioHistoryDepth = 2;
+      const company = PORTFOLIO_DATA.companies.find((c) => c.id === vv.companyId);
+      if (!company) {
+        closeDrilldownModal({ fromHistory: true });
+        return;
+      }
+      const client = (company.clients || []).find((cl) => cl.id === vv.clientId);
+      if (!client) {
+        state.currentCompany = company;
+        state.currentClient = null;
+        renderCompanyOverview(company, { fromHistory: true });
+        return;
+      }
+
+      state.currentCompany = company;
+      if (!elements.drilldownModal.classList.contains('active')) {
+        elements.drilldownModal.classList.add('active');
+        document.body.classList.add('modal-open');
+        elements.drilldownModal.setAttribute('aria-hidden', 'false');
+      }
+
+      openClientView(client, { fromHistory: true });
+    }
   }
 
   // Render Company Overview inside Modal
@@ -964,11 +1075,15 @@
           }
 
           return `
-            <div class="client-card" tabindex="0" role="button" data-client-id="${client.id}" aria-label="View creative deliverables for ${client.name}">
+            <div class="client-card" tabindex="0" role="button" data-client-id="${client.id}" aria-label="View creative work for ${client.name}">
               <div class="client-logo-box">
                 ${logoMarkup}
               </div>
               <h4 class="client-card-name">${client.name}</h4>
+              <div class="client-card-cta" aria-hidden="true">
+                <span class="cta-text">VIEW WORK</span>
+                <span class="cta-arrow">→</span>
+              </div>
             </div>
           `;
         })
@@ -992,7 +1107,7 @@
       // Back to timeline button listener
       const backBtn = document.getElementById('modal-back-btn');
       if (backBtn) {
-        backBtn.addEventListener('click', closeDrilldownModal);
+        backBtn.addEventListener('click', () => closeDrilldownModal());
       }
 
       // Attach client card click listeners
@@ -1088,7 +1203,7 @@
 
       const backBtn = document.getElementById('modal-back-btn');
       if (backBtn) {
-        backBtn.addEventListener('click', closeDrilldownModal);
+        backBtn.addEventListener('click', () => closeDrilldownModal());
       }
 
       attachArtworkClickListeners();
@@ -1119,7 +1234,7 @@
 
       const backBtn = document.getElementById('modal-back-btn');
       if (backBtn) {
-        backBtn.addEventListener('click', closeDrilldownModal);
+        backBtn.addEventListener('click', () => closeDrilldownModal());
       }
 
       attachArtworkClickListeners();
@@ -1127,13 +1242,32 @@
   }
 
   // Open Client Dedicated Creative View inside Modal
-  function openClientView(client) {
+  function openClientView(client, options = {}) {
     state.currentClient = client;
     state.currentGalleryImages = client.images || [];
 
+    const company = state.currentCompany || PORTFOLIO_DATA.companies.find((c) => (c.clients || []).some((cl) => cl.id === client.id));
+    if (company && !state.currentCompany) {
+      state.currentCompany = company;
+    }
+
+    if (!options.fromHistory && state.currentCompany) {
+      history.pushState(
+        {
+          vvPortfolio: {
+            level: 'client',
+            companyId: state.currentCompany.id,
+            clientId: client.id
+          }
+        },
+        ''
+      );
+      portfolioHistoryDepth = 2;
+    }
+
     updateBreadcrumbs([
-      { label: 'Creative Journey', onClick: closeDrilldownModal },
-      { label: state.currentCompany.shortName, onClick: () => renderCompanyOverview(state.currentCompany) },
+      { label: 'Creative Journey', onClick: () => closeDrilldownModal() },
+      { label: state.currentCompany ? state.currentCompany.shortName : 'EduRiser', onClick: () => navigateBackToCompany() },
       { label: client.name, active: true }
     ]);
 
@@ -1154,12 +1288,12 @@
     elements.modalBody.innerHTML = `
       <div class="client-work-view">
         <div class="client-work-header">
-          <button class="back-to-clients-btn" id="back-to-clients-btn" aria-label="Return to ${state.currentCompany.shortName} client list">
+          <button class="back-to-clients-btn" id="back-to-clients-btn" aria-label="Return to ${state.currentCompany ? state.currentCompany.shortName : 'EduRiser'} client list">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
-            ← Back to ${state.currentCompany.shortName} Accounts
+            ← Back to ${state.currentCompany ? state.currentCompany.shortName : 'EduRiser'} Accounts
           </button>
 
           <div class="client-brand-identity-row">
@@ -1167,7 +1301,7 @@
               ${clientLogoMarkup}
             </div>
             <div class="client-brand-text-col">
-              <span class="eyebrow">${client.clientBadge || `Client Project — ${state.currentCompany.shortName}`}</span>
+              <span class="eyebrow">${client.clientBadge || `Client Project — ${state.currentCompany ? state.currentCompany.shortName : 'EduRiser'}`}</span>
               <h2 class="client-brand-name font-heading">
                 ${client.fullName || client.name}
               </h2>
@@ -1208,7 +1342,7 @@
     // Back to clients button listener
     const backBtn = document.getElementById('back-to-clients-btn');
     if (backBtn) {
-      backBtn.addEventListener('click', () => renderCompanyOverview(state.currentCompany));
+      backBtn.addEventListener('click', navigateBackToCompany);
     }
 
     attachArtworkClickListeners();
