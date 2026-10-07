@@ -311,10 +311,38 @@ const PORTFOLIO_DATA = {
         "Brand Collateral"
       ],
       images: [
-        { id: "dm-01", title: "DigiMarketerZ Design 01", category: "Digital Campaign", src: "images/digimarketerz-work-01.gif", placeholder: "DIGIMARKETERZ DESIGN 01" },
-        { id: "dm-02", title: "DigiMarketerZ Design 02", category: "Social Creative", src: "images/digimarketerz-work-02.jpg", placeholder: "DIGIMARKETERZ DESIGN 02" },
-        { id: "dm-03", title: "DigiMarketerZ Design 03", category: "Web Banner", src: "images/digimarketerz-work-03.jpg", placeholder: "DIGIMARKETERZ DESIGN 03" },
-        { id: "dm-04", title: "DigiMarketerZ Design 04", category: "Brand Collateral", src: "images/digimarketerz-work-04.jpg", placeholder: "DIGIMARKETERZ DESIGN 04" }
+        { id: "dm-01", title: "DigiMarketerZ Motion Creative 01", category: "Digital Campaign", src: "images/digimarketerz-work-01.gif", placeholder: "DIGIMARKETERZ DESIGN 01" },
+        { id: "dm-02", title: "DigiMarketerZ Creative 02", category: "Social Creative", src: "images/digimarketerz-work-02.jpg", placeholder: "DIGIMARKETERZ DESIGN 02" },
+        { id: "dm-03", title: "DigiMarketerZ Creative 03", category: "Web Banner", src: "images/digimarketerz-work-03.jpg", placeholder: "DIGIMARKETERZ DESIGN 03" },
+        { id: "dm-04", title: "DigiMarketerZ Creative 04", category: "Brand Collateral", src: "images/digimarketerz-work-04.jpg", placeholder: "DIGIMARKETERZ DESIGN 04" },
+        { id: "dm-05", title: "DigiMarketerZ Creative 05", category: "Digital Marketing", src: "images/digimarketerz-work-05.jpg", placeholder: "DIGIMARKETERZ DESIGN 05" },
+        { id: "dm-06", title: "DigiMarketerZ Creative 06", category: "Social Media Campaign", src: "images/digimarketerz-work-06.jpg", placeholder: "DIGIMARKETERZ DESIGN 06" },
+        { id: "dm-07", title: "DigiMarketerZ Creative 07", category: "Performance Ad", src: "images/digimarketerz-work-07.jpg", placeholder: "DIGIMARKETERZ DESIGN 07" },
+        { id: "dm-08", title: "DigiMarketerZ Creative 08", category: "Web Banner & Ad", src: "images/digimarketerz-work-08.jpg", placeholder: "DIGIMARKETERZ DESIGN 08" },
+        { id: "dm-09", title: "DigiMarketerZ Creative 09", category: "Brand Asset", src: "images/digimarketerz-work-09.jpg", placeholder: "DIGIMARKETERZ DESIGN 09" },
+        { id: "dm-10", title: "DigiMarketerZ Creative 10", category: "Digital Marketing", src: "images/digimarketerz-work-10.jpg", placeholder: "DIGIMARKETERZ DESIGN 10" },
+        { id: "dm-11", title: "DigiMarketerZ Creative 11", category: "Social Creative", src: "images/digimarketerz-work-11.jpg", placeholder: "DIGIMARKETERZ DESIGN 11" },
+        { id: "dm-12", title: "DigiMarketerZ Creative 12", category: "Campaign Visual", src: "images/digimarketerz-work-12.jpg", placeholder: "DIGIMARKETERZ DESIGN 12" },
+        { id: "dm-13", title: "DigiMarketerZ Creative 13", category: "Performance Ad", src: "images/digimarketerz-work-13.jpg", placeholder: "DIGIMARKETERZ DESIGN 13" },
+        { id: "dm-14", title: "DigiMarketerZ Creative 14", category: "Web Banner & Ad", src: "images/digimarketerz-work-14.jpg", placeholder: "DIGIMARKETERZ DESIGN 14" },
+        { id: "dm-15", title: "DigiMarketerZ Creative 15", category: "Social Creative", src: "images/digimarketerz-work-15.jpg", placeholder: "DIGIMARKETERZ DESIGN 15" },
+        { id: "dm-16", title: "DigiMarketerZ Creative 16", category: "Brand Collateral", src: "images/digimarketerz-work-16.jpg", placeholder: "DIGIMARKETERZ DESIGN 16" },
+        { id: "dm-17", title: "DigiMarketerZ Creative 17", category: "Digital Campaign", src: "images/digimarketerz-work-17.jpg", placeholder: "DIGIMARKETERZ DESIGN 17" },
+        { id: "dm-18", title: "DigiMarketerZ Creative 18", category: "Social Media Campaign", src: "images/digimarketerz-work-18.jpg", placeholder: "DIGIMARKETERZ DESIGN 18" },
+        { id: "dm-19", title: "DigiMarketerZ Creative 19", category: "Performance Ad", src: "images/digimarketerz-work-19.jpg", placeholder: "DIGIMARKETERZ DESIGN 19" },
+        { id: "dm-20", title: "DigiMarketerZ Creative 20", category: "Brand Asset", src: "images/digimarketerz-work-20.jpg", placeholder: "DIGIMARKETERZ DESIGN 20" },
+        { id: "dm-21", title: "DigiMarketerZ Creative 21", category: "Web Banner", src: "images/digimarketerz-work-21.jpg", placeholder: "DIGIMARKETERZ DESIGN 21" },
+        { id: "dm-22", title: "DigiMarketerZ Creative 22", category: "Social Creative", src: "images/digimarketerz-work-22.jpg", placeholder: "DIGIMARKETERZ DESIGN 22" },
+        { id: "dm-23", title: "DigiMarketerZ Creative 23", category: "Digital Campaign", src: "images/digimarketerz-work-23.jpg", placeholder: "DIGIMARKETERZ DESIGN 23" },
+        { id: "dm-24", title: "DigiMarketerZ Creative 24", category: "Performance Ad", src: "images/digimarketerz-work-24.jpg", placeholder: "DIGIMARKETERZ DESIGN 24" },
+        { id: "dm-25", title: "DigiMarketerZ Creative 25", category: "Brand Collateral", src: "images/digimarketerz-work-25.jpg", placeholder: "DIGIMARKETERZ DESIGN 25" },
+        { id: "dm-26", title: "DigiMarketerZ Creative 26", category: "Social Creative", src: "images/digimarketerz-work-26.jpg", placeholder: "DIGIMARKETERZ DESIGN 26" },
+        { id: "dm-27", title: "DigiMarketerZ Creative 27", category: "Marketing Visual", src: "images/digimarketerz-work-27.jpg", placeholder: "DIGIMARKETERZ DESIGN 27" },
+        { id: "dm-28", title: "DigiMarketerZ Motion Creative 28", category: "Digital Campaign", src: "images/digimarketerz-work-28.gif", placeholder: "DIGIMARKETERZ DESIGN 28" },
+        { id: "dm-29", title: "DigiMarketerZ Creative 29", category: "Social Media Campaign", src: "images/digimarketerz-work-29.jpg", placeholder: "DIGIMARKETERZ DESIGN 29" },
+        { id: "dm-30", title: "DigiMarketerZ Creative 30", category: "Performance Ad", src: "images/digimarketerz-work-30.jpg", placeholder: "DIGIMARKETERZ DESIGN 30" },
+        { id: "dm-31", title: "DigiMarketerZ Creative 31", category: "Brand Collateral", src: "images/digimarketerz-work-31.jpg", placeholder: "DIGIMARKETERZ DESIGN 31" },
+        { id: "dm-32", title: "DigiMarketerZ Creative 32", category: "Web Banner & Ad", src: "images/digimarketerz-work-32.jpg", placeholder: "DIGIMARKETERZ DESIGN 32" }
       ]
     },
 
@@ -343,7 +371,19 @@ const PORTFOLIO_DATA = {
       images: [
         { id: "vg-01", title: "Veer Graphics Design 01", category: "Brand Identity", src: "images/veer-graphics-work-01.jpg", placeholder: "VEER GRAPHICS DESIGN 01" },
         { id: "vg-02", title: "Veer Graphics Design 02", category: "Corporate Brochure", src: "images/veer-graphics-work-02.jpg", placeholder: "VEER GRAPHICS DESIGN 02" },
-        { id: "vg-03", title: "Veer Graphics Design 03", category: "Print Production", src: "images/veer-graphics-work-03.jpg", placeholder: "VEER GRAPHICS DESIGN 03" }
+        { id: "vg-03", title: "Veer Graphics Design 03", category: "Print Production", src: "images/veer-graphics-work-03.jpg", placeholder: "VEER GRAPHICS DESIGN 03" },
+        { id: "vg-04", title: "Veer Graphics Design 04", category: "Visual Branding", src: "images/veer-graphics-work-04.jpg", placeholder: "VEER GRAPHICS DESIGN 04" },
+        { id: "vg-05", title: "Veer Graphics Design 05", category: "Marketing Collateral", src: "images/veer-graphics-work-05.jpg", placeholder: "VEER GRAPHICS DESIGN 05" },
+        { id: "vg-06", title: "Veer Graphics Design 06", category: "Editorial & Print Design", src: "images/veer-graphics-work-06.jpg", placeholder: "VEER GRAPHICS DESIGN 06" },
+        { id: "vg-07", title: "Veer Graphics Design 07", category: "Brand Identity System", src: "images/veer-graphics-work-07.jpg", placeholder: "VEER GRAPHICS DESIGN 07" },
+        { id: "vg-08", title: "Veer Graphics Design 08", category: "Corporate Collateral", src: "images/veer-graphics-work-08.jpg", placeholder: "VEER GRAPHICS DESIGN 08" },
+        { id: "vg-09", title: "Veer Graphics Design 09", category: "Print Production", src: "images/veer-graphics-work-09.jpg", placeholder: "VEER GRAPHICS DESIGN 09" },
+        { id: "vg-10", title: "Veer Graphics Design 10", category: "Visual Communication", src: "images/veer-graphics-work-10.jpg", placeholder: "VEER GRAPHICS DESIGN 10" },
+        { id: "vg-11", title: "Veer Graphics Design 11", category: "Brand Guidelines", src: "images/veer-graphics-work-11.jpg", placeholder: "VEER GRAPHICS DESIGN 11" },
+        { id: "vg-12", title: "Veer Graphics Design 12", category: "Corporate Brochure", src: "images/veer-graphics-work-12.jpg", placeholder: "VEER GRAPHICS DESIGN 12" },
+        { id: "vg-13", title: "Veer Graphics Design 13", category: "Marketing Asset", src: "images/veer-graphics-work-13.jpg", placeholder: "VEER GRAPHICS DESIGN 13" },
+        { id: "vg-14", title: "Veer Graphics Design 14", category: "Brand Identity", src: "images/veer-graphics-work-14.jpg", placeholder: "VEER GRAPHICS DESIGN 14" },
+        { id: "vg-15", title: "Veer Graphics Design 15", category: "Print Production", src: "images/veer-graphics-work-15.jpg", placeholder: "VEER GRAPHICS DESIGN 15" }
       ]
     },
 

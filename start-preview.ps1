@@ -46,6 +46,7 @@ try {
                 ".jpg"  { "image/jpeg" }
                 ".jpeg" { "image/jpeg" }
                 ".webp" { "image/webp" }
+                ".gif"  { "image/gif" }
                 default { "application/octet-stream" }
             }
 
